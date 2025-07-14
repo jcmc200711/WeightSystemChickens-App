@@ -1,0 +1,44 @@
+# Logs y archivos de depuración
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.pnpm-store/
+
+# Directorios de dependencias
+/node_modules/
+/jspm_packages/ # Mantener si usas jspm, si no, puedes borrar esta línea
+
+# Archivos de producción (Output de la compilación)
+# Para GitHub Pages, la carpeta 'build' DEBE subirse al repositorio,
+# por lo tanto, NO la ignoramos aquí.
+/dist # Si tu proyecto genera una carpeta 'dist' (ej. con Vite, parcel), ignórala si no quieres subirla
+/out  # Otros directorios de salida que no quieres subir
+#.build # Esta línea estaría aquí si QUISIERAS ignorar la carpeta 'build'. Asegúrate de que NO esté activa (comentada con #) para este caso.
+
+# Archivos estáticos de la aplicación (fuente)
+# La carpeta 'public' es crucial para Create React App y DEBE subirse a Git.
+# Por eso, NO la ignoramos.
+#/public # <--- ¡ASEGÚRATE DE QUE ESTA LÍNEA ESTÉ COMENTADA O NO EXISTA EN TU .gitignore!
+
+.vite # Carpeta de caché de Vite (si usas Vite, ignórala)
+
+# Misceláneo
+.DS_Store # Archivos de macOS
+.env      # Archivo .env genérico (contiene variables de entorno, no subir)
+.env.local
+.env*.local
+.idea/    # Carpetas de IDEs (IntelliJ, WebStorm)
+.vscode/  # Configuración de VS Code (opcional si quieres compartirla, pero seguro ignorar)
+*.tsbuildinfo
+*.tgz
+
+# Archivos específicos del editor (VS Code, IntelliJ, etc.)
+.vscode/*
+!.vscode/extensions.json # Excepto este si quieres compartir extensiones recomendadas
+.idea/*
+!.idea/workspace.xml
+!.idea/tasks.xml
+!.idea/.name
