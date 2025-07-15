@@ -17,7 +17,7 @@ exports.handler = async (event, context) => {
 
         // Ejecuta la consulta SQL para obtener todos los pollos
         // Seleccionamos las columnas explícitamente y ordenamos por fecha de registro descendente
-        const res = await client.query('SELECT id, responsable, nombre_comp, peso_pol, fecha_regis FROM pollos ORDER BY fecha_registro DESC');
+        const res = await client.query('SELECT id, responsable, nombre_comp, peso_pol, fecha_regis FROM pollos ORDER BY fecha_regis DESC');
 
         // Retorna una respuesta HTTP 200 (OK) con los datos de los pollos en formato JSON
         return {
