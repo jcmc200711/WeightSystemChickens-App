@@ -10,7 +10,7 @@ export function Regis() {
       try {
         // La URL para tu Netlify Function.
         // Cuando la app esté desplegada en Netlify, esta ruta es relativa a la raíz.
-        const response = await fetch('/netlify/functions/get-pollos.js');
+        const response = await fetch('/.netlify/functions/get-pollos');
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
