@@ -162,13 +162,14 @@ export function Regis() {
                         pollo.fecha_regis ? new Date(pollo.fecha_regis).toLocaleDateString() : 'N/A'
                       )}
                     </td>
-                    <td className="py-4 px-4 text-center text-2xl text-black">
+                                        <td className="py-4 px-4 text-center text-5xl text-black">
                       {editingPolloId === pollo.id ? (
                         // Botones en modo edición
-                        <>
+                        // <--- APLICAMOS FLEX Y GAP AQUÍ
+                        <div className="flex justify-center items-center gap-4"> 
                           <button
                             onClick={handleSaveClick}
-                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-2 text-base"
+                            className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded text-base"
                           >
                             Guardar
                           </button>
@@ -178,7 +179,7 @@ export function Regis() {
                           >
                             Cancelar
                           </button>
-                        </>
+                        </div>
                       ) : (
                         // Botón en modo visualización
                         <button
