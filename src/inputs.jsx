@@ -19,9 +19,9 @@ export function App() {
 
     const dataToSend = {
       responsable: responsable,
-      nombre_comprador: nombre,
-      peso_pollo: parseFloat(pesoPollo),
-      fecha_registro: new Date().toISOString(),
+      nombre_comp: nombre,
+      peso_pol: parseFloat(pesoPollo),
+      fecha_regis: new Date().toISOString(),
     };
 
     try {
