@@ -53,7 +53,7 @@ export function Regis() {
     setError(null);
     try {
       // Envía los datos actualizados a tu Netlify Function
-      const response = await fetch('/.netlify/functions/update-pollo', { // Usaremos una nueva función 'update-pollo'
+      const response = await fetch('/.netlify/functions/update-pollos', { // Usaremos una nueva función 'update-pollo'
         method: 'PUT', // Método HTTP para actualizar
         headers: {
           'Content-Type': 'application/json',
@@ -108,8 +108,8 @@ export function Regis() {
                 {pollos.map((pollo) => (
                   <tr key={pollo.id} className="hover:bg-gray-50 border-b border-gray-200">
                     {/* Renderizado condicional: si está en edición, muestra input; si no, muestra texto */}
-                    <td className="py-4 px-4 text-center text-5xl text-black">{pollo.id}</td>
-                    <td className="py-4 px-4 text-left text-5xl text-black">
+                    <td className="py-4 px-4 text-center text-2xl text-black">{pollo.id}</td>
+                    <td className="py-4 px-4 text-left text-2xl text-black">
                       {editingPolloId === pollo.id ? (
                         <input
                           type="text"
@@ -122,7 +122,7 @@ export function Regis() {
                         pollo.responsable
                       )}
                     </td>
-                    <td className="py-4 px-4 text-left text-5xl text-black">
+                    <td className="py-4 px-4 text-left text-2xl text-black">
                       {editingPolloId === pollo.id ? (
                         <input
                           type="text"
@@ -135,7 +135,7 @@ export function Regis() {
                         pollo.nombre_comp
                       )}
                     </td>
-                    <td className="py-4 px-4 text-right text-5xl text-black">
+                    <td className="py-4 px-4 text-right text-2xl text-black">
                       {editingPolloId === pollo.id ? (
                         <input
                           type="number" // Para peso, usar number
@@ -149,7 +149,7 @@ export function Regis() {
                         `${pollo.peso_pol} kg`
                       )}
                     </td>
-                    <td className="py-4 px-4 text-left text-5xl text-black">
+                    <td className="py-4 px-4 text-left text-2xl text-black">
                       {editingPolloId === pollo.id ? (
                         <input
                           type="date" // Para fechas
@@ -162,7 +162,7 @@ export function Regis() {
                         pollo.fecha_regis ? new Date(pollo.fecha_regis).toLocaleDateString() : 'N/A'
                       )}
                     </td>
-                    <td className="py-4 px-4 text-center text-5xl text-black">
+                    <td className="py-4 px-4 text-center text-2xl text-black">
                       {editingPolloId === pollo.id ? (
                         // Botones en modo edición
                         <>
