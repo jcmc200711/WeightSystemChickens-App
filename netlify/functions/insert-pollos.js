@@ -22,10 +22,10 @@ exports.handler = async (event, context) => {
   try {
     const data = JSON.parse(event.body); // Parsear el cuerpo JSON de la petición
     // Asegúrate de que los nombres de las claves aquí coincidan con lo que envías desde el frontend
-    const { responsable, nombre_comprador, peso_pollo, fecha_registro } = data;
+    const { responsable, nombre_comp, peso_pol, fecha_regis } = data;
 
     // Validación básica de datos
-    if (!responsable || !nombre_comprador || peso_pollo === undefined || !fecha_registro) {
+    if (!responsable || !nombre_comp || peso_pol === undefined || !fecha_regis) {
       return {
         statusCode: 400,
         body: JSON.stringify({ message: 'Missing required fields' }),
@@ -38,10 +38,10 @@ exports.handler = async (event, context) => {
     // Asegúrate de que los nombres de las columnas coincidan con tu base de datos en Neon
     // El 'id' se asume que es SERIAL o UUID y se genera automáticamente en la DB.
     const result = await client.query(
-      `INSERT INTO pollos (responsable, nombre_comprador, peso_pollo, fecha_registro)
+      `INSERT INTO pollos (responsable, nombre_comp, peso_pol, fecha_regis)
        VALUES ($1, $2, $3, $4)
        RETURNING id;`, // RETURNING id para obtener el ID del nuevo registro
-      [responsable, nombre_comprador, peso_pollo, fecha_registro]
+      [responsable, nombre_comp, peso_pol, fecha_regis]
     );
 
     // Devuelve el ID del nuevo registro

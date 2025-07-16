@@ -23,9 +23,9 @@ export function App() {
     // Preparar los datos para enviar
     const dataToSend = {
       responsable: responsable,
-      nombre_comprador: nombre, // Asegúrate de que este nombre de clave coincida con tu DB
-      peso_pollo: parseFloat(pesoPollo), // Convertir a número flotante
-      fecha_registro: new Date().toISOString(), // Fecha actual en formato ISO
+      nombre_comp: nombre, // Asegúrate de que este nombre de clave coincida con tu DB
+      peso_pol: parseFloat(pesoPollo), // Convertir a número flotante
+      fecha_regis: new Date().toISOString(), // Fecha actual en formato ISO
     };
 
     try {
@@ -50,10 +50,6 @@ export function App() {
       setNombre("");
       setPesoPollo("");
 
-      // Opcional: Si tienes el componente Regis en la misma página,
-      // podrías querer recargar los datos en Regis aquí.
-      // Esto requeriría pasar fetchPollos de Regis como prop a App,
-      // o usar un contexto/estado global. Por ahora, solo muestra el mensaje.
 
     } catch (err) {
       setMessage(`Error al registrar el pollo: ${err.message}`);
