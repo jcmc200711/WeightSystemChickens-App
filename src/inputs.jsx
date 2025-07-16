@@ -25,7 +25,7 @@ export function App() {
     };
 
     try {
-      const response = await fetch('/.netlify/functions/insert-pollo', {
+      const response = await fetch('/.netlify/functions/insert-pollos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
