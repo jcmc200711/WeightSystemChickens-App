@@ -20,7 +20,6 @@ exports.handler = async (event, context) => {
 
   let client;
   try {
-    // ➡️ CORRECCIÓN: Analizar el cuerpo del evento para obtener el ID
     const { id } = JSON.parse(event.body);
 
     if (!id) {
