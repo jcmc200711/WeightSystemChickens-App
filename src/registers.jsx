@@ -83,7 +83,7 @@ export function Regis() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('/.netlify/functions/delete-pollo', {
+      const response = await fetch('/.netlify/functions/delete-pollos', {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
