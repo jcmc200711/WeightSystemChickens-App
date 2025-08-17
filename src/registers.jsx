@@ -112,6 +112,9 @@ export function Regis() {
     <section className='flex justify-center items-center p-4 min-h-screen bg-gray-100'>
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
         <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">Registro de Pollos</h1>
+        <p className="text-xl text-center mb-4 text-gray-600">
+        Total de pollos registrados: <span className="font-bold text-gray-800">{pollos.length}</span>
+        </p>
         {pollos.length === 0 ? (
           <p className="text-center text-gray-600">No hay pollos registrados aún.</p>
         ) : (
