@@ -96,6 +96,7 @@ export function Regis() {
         throw new Error(`HTTP error! status: ${response.status}, message: ${errorText}`);
       }
       
+      // Actualiza el estado para reflejar la eliminación
       setPollos(prevPollos => prevPollos.filter(p => p.id !== id));
       alert('Pollo eliminado exitosamente!');
     } catch (err) {
@@ -113,7 +114,7 @@ export function Regis() {
       <div className="w-full max-w-4xl bg-white shadow-lg rounded-lg p-6">
         <h1 className="text-4xl font-bold text-center mb-6 text-gray-800">Registro de Pollos</h1>
         <p className="text-xl text-center mb-4 text-gray-600">
-        Total de pollos registrados: <span className="font-bold text-gray-800">{pollos.length}</span>
+          Total de pollos registrados: <span className="font-bold text-gray-800">{pollos.length}</span>
         </p>
         {pollos.length === 0 ? (
           <p className="text-center text-gray-600">No hay pollos registrados aún.</p>
@@ -131,9 +132,11 @@ export function Regis() {
                 </tr>
               </thead>
               <tbody>
-                {pollos.map((pollo) => (
+                {pollos.map((pollo, index) => (
                   <tr key={pollo.id} className="hover:bg-gray-50 border-b border-gray-200">
-                    <td className="py-2 px-4 text-center text-lg text-black">{pollo.id}</td>
+                    {/* CAMBIO AQUÍ: Usar el índice + 1 para la numeración */}
+                    <td className="py-2 px-4 text-center text-lg text-black">{index + 1}</td>
+                    
                     <td className="py-2 px-4 text-left text-lg text-black">
                       {editingPolloId === pollo.id ? (
                         <input
