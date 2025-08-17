@@ -11,7 +11,7 @@ const pool = new Pool({
 });
 
 exports.handler = async (event, context) => {
-  if (event.httpMethod !== 'DELETE') { // ⬅️ CORRECCIÓN: el método debe ser 'DELETE'
+  if (event.httpMethod !== 'DELETE') {
     return {
       statusCode: 405,
       body: JSON.stringify({ message: 'Method Not Allowed' }),
@@ -20,8 +20,8 @@ exports.handler = async (event, context) => {
 
   let client;
   try {
-    const data = JSON.parse(event.body);
-    const { id } = data;
+    // ➡️ CORRECCIÓN: Analizar el cuerpo del evento para obtener el ID
+    const { id } = JSON.parse(event.body);
 
     if (!id) {
       return {
