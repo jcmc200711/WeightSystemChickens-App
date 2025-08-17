@@ -50,7 +50,7 @@ export function Regis() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch('/.netlify/functions/update-pollo', {
+      const response = await fetch('/.netlify/functions/update-pollos', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
