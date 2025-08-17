@@ -170,7 +170,7 @@ export function Regis() {
                           name="peso_pol"
                           value={editedPollo.peso_pol || ''}
                           onChange={handleChange}
-                          step="0.01"
+                          step="0.001"
                           className="w-full p-1 border border-gray-300 rounded text-base"
                         />
                       ) : (
